@@ -1,7 +1,8 @@
 
 # /etc/pacman.d/mirrorlist
-echo '
-## Country : China
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak_$(date +%m%d_%H:%M:%D)
+
+echo '## Country : China
 
 ## tsinghua
 Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch
@@ -10,7 +11,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch
 Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch
 
 ## sjtu
-Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch' | sudo tee -a /etc/pacman.d/mirrorlist
+Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch' | sudo tee /etc/pacman.d/mirrorlist
 
 
 # /etc/pacman.conf
@@ -30,7 +31,7 @@ echo -e "\n\n\n\n\n" | sudo pacman -Syyu
 echo -e "\n\n" | sudo pacman -S zsh vim git
 
 # oh-my-zsh
-chsh -s $(which zsh)
+#chsh -s $(which zsh)
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
