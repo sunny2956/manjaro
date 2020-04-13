@@ -24,11 +24,11 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
 sudo pacman -Syy
 
-echo -e "\n\n\n" | sudo pacman -S archlinuxcn-keyring
+sudo pacman -S archlinuxcn-keyring --noconfirm
 
-echo -e "\n\n\n\n\n" | sudo pacman -Syyu 
+sudo pacman -Syyu --noconfirm
 
-echo -e "\n\n" | sudo pacman -S zsh vim git
+sudo pacman -S zsh vim git --noconfirm
 
 # oh-my-zsh
 #chsh -s $(which zsh)
